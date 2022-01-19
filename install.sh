@@ -16,3 +16,8 @@ do
   cp "${font}" "${fonts_dir}"
 done
 
+if [ $(uname) = "Linux" ]; then  
+  mkdir -p "${HOME}/.config/fontconfig"
+  ln -s "${PWD}/noto-emoji.conf" "${HOME}/.config/fontconfig/"
+  fc-cache --verbose
+fi
