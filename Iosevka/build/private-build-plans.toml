@@ -1,0 +1,15 @@
+# https://github.com/be5invis/Iosevka
+# Run with `docker run -e FONT_VERSION=15.5.2 -it -v $(pwd):/build avivace/iosevka-build`
+[buildPlans.iosevka]
+family = "Iosevka"
+spacing = "term"
+serifs = "sans"
+no-cv-ss = true
+export-glyph-names = true
+
+  [buildPlans.iosevka.variants]
+  inherits = "ss14"
+
+  [buildPlans.iosevka.ligations]
+  inherits = "dlig"
+  enables = ["center-ops", "tildeeq"]
