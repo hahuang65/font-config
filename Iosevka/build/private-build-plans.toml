@@ -1,15 +1,24 @@
 # https://github.com/be5invis/Iosevka
-# Run with `docker run -e FONT_VERSION=15.5.2 -it -v $(pwd):/build avivace/iosevka-build`
+# Run with `docker run -it -v $(pwd):/build avivace/iosevka-build`
 [buildPlans.iosevka]
 family = "Iosevka"
 spacing = "term"
 serifs = "sans"
 no-cv-ss = true
-export-glyph-names = true
+export-glyph-names = false
 
   [buildPlans.iosevka.variants]
   inherits = "ss14"
 
-  [buildPlans.iosevka.ligations]
-  inherits = "dlig"
-  enables = ["center-ops", "tildeeq"]
+    [buildPlans.iosevka.variants.design]
+    capital-a = "curly-serifless"
+    a = "single-storey-earless-corner-serifless"
+    g = "single-storey-earless-corner-flat-hook"
+    i = "serifed-flat-tailed"
+    y = "cursive-flat-hook"
+    brace = "curly-flat-boundary"
+    at = "fourfold"
+    bar = "force-upright"
+    question = "smooth"
+    lig-ltgteq = "flat"
+    lig-neq = "slightly-slanted"
