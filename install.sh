@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $(uname) = "Darwin" ]; then  
+if [ $(uname) = "Darwin" ]; then
   fonts_dir="${HOME}/Library/Fonts"
 elif [ $(uname) = "Linux" ]; then
   fonts_dir="${HOME}/.local/share/fonts"
@@ -11,18 +11,16 @@ fi
 
 mkdir -p "${fonts_dir}"
 
-for font in **/*.ttf
-do
+for font in **/*.ttf; do
   cp "${font}" "${fonts_dir}"
 done
 
-for font in **/*.otf
-do
+for font in **/*.otf; do
   cp "${font}" "${fonts_dir}"
 done
 
-if [ $(uname) = "Linux" ]; then  
+if [ $(uname) = "Linux" ]; then
   mkdir -p "${HOME}/.config/fontconfig"
-  ln -s "${PWD}/noto-emoji.conf" "${HOME}/.config/fontconfig/"
+  ln -s "${PWD}/Noto Color Emoji/noto-emoji.conf" "${HOME}/.config/fontconfig/"
   fc-cache --verbose
 fi
