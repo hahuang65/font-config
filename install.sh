@@ -15,6 +15,10 @@ for font in **/*.ttf; do
   cp "${font}" "${fonts_dir}"
 done
 
+for font in **/*.ttc; do
+  cp "${font}" "${fonts_dir}"
+done
+
 for font in **/*.otf; do
   cp "${font}" "${fonts_dir}"
 done
